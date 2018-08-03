@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--QrVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="QrVC" customModule="QRScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dec-NH-rFN">
+                                <rect key="frame" x="112" y="258" width="150" height="150"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="focus"/>
+                                <connections>
+                                    <segue destination="kgR-k8-mco" kind="show" id="tdr-cc-mNM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dec-NH-rFN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1Ti-Ru-fkJ"/>
+                            <constraint firstItem="dec-NH-rFN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="poV-bn-0GS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="314" y="52"/>
+        </scene>
+        <!--Qr ScannerVC-->
+        <scene sceneID="iEO-mn-uDp">
+            <objects>
+                <viewController id="kgR-k8-mco" customClass="QrScannerVC" customModule="QRScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l5p-CS-KYh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingen upptäck QR kod" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOz-lZ-DXt">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="PF4-Hh-Qn7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STb-TO-rIX">
+                                <rect key="frame" x="16" y="30" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="0QN-AO-yvp"/>
+                                    <constraint firstAttribute="height" constant="20" id="R1k-cE-xCb"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="cross"/>
+                                <connections>
+                                    <segue destination="JDn-w5-4Ee" kind="unwind" unwindAction="unwindToStartViewWithSegue:" id="zB9-gZ-nNF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qOz-lZ-DXt" firstAttribute="leading" secondItem="Vkx-gF-6g8" secondAttribute="leading" id="36a-jY-zT8"/>
+                            <constraint firstItem="qOz-lZ-DXt" firstAttribute="top" secondItem="l5p-CS-KYh" secondAttribute="top" id="SGz-QF-f5R"/>
+                            <constraint firstItem="STb-TO-rIX" firstAttribute="top" secondItem="Vkx-gF-6g8" secondAttribute="top" constant="10" id="VD7-Yk-Nkx"/>
+                            <constraint firstItem="STb-TO-rIX" firstAttribute="leading" secondItem="Vkx-gF-6g8" secondAttribute="leading" constant="16" id="VHB-24-Emk"/>
+                            <constraint firstItem="STb-TO-rIX" firstAttribute="leading" secondItem="Vkx-gF-6g8" secondAttribute="leading" constant="16" id="VKn-Pv-LoH"/>
+                            <constraint firstItem="STb-TO-rIX" firstAttribute="top" secondItem="Vkx-gF-6g8" secondAttribute="top" constant="10" id="goc-Sd-EFV"/>
+                            <constraint firstItem="qOz-lZ-DXt" firstAttribute="trailing" secondItem="Vkx-gF-6g8" secondAttribute="trailing" id="tA5-8e-Gz2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Vkx-gF-6g8"/>
+                    </view>
+                    <connections>
+                        <outlet property="dissmisBtn" destination="STb-TO-rIX" id="RCM-yx-kEt"/>
+                        <outlet property="messageLbl" destination="qOz-lZ-DXt" id="BAa-Ze-9UN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b9z-zm-fTq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="JDn-w5-4Ee" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1100" y="51.724137931034484"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cross" width="40" height="40"/>
+        <image name="focus" width="150" height="150"/>
+    </resources>
+</document>
